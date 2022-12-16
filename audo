@@ -1,0 +1,29 @@
+#!/bin/python3
+import sys, getopt
+from audoai.noise_removal import NoiseRemovalClient
+
+def remNoise(inputfile, outputfile):
+    print ('Input file is ', inputfile)
+    noise_removal = NoiseRemovalClient(api_key="6312a9639c0ad7e7a8f9c87d5d28377f")
+    result = noise_removal.process(inputfile)
+    print(result.url)
+    result.save(outputfile)
+    print ('Output file is stored in current directory ', outputfile)
+
+
+def main(argv):
+   inputfile = ''
+   outputfile = ''
+   opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+   for opt, arg in opts:
+      if opt == '-h':
+         print ('audo -i <inputfile> -o <outputfile>')
+         sys.exit()
+      elif opt in ("-i", "--ifile"):
+         inputfile = arg
+      elif opt in ("-o", "--ofile"):
+         outputfile = arg
+   remNoise(inputfile, outputfile)
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
