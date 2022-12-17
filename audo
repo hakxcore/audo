@@ -4,7 +4,7 @@ from audoai.noise_removal import NoiseRemovalClient
 
 def remNoise(inputfile, outputfile):
     print ('Input file is ', inputfile)
-    noise_removal = NoiseRemovalClient(api_key="6312a9639c0ad7e7a8f9c87d5d28377f")
+    noise_removal = NoiseRemovalClient(api_key="<YOUR-API-KEY>")
     result = noise_removal.process(inputfile)
     print(result.url)
     result.save(outputfile)
