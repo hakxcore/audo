@@ -6,7 +6,7 @@
 </p>
 <p align="center">
 <img src="https://raw.githubusercontent.com/hakxcore/audo/main/assets/audo-logo.png"/></p>
-Audo is an Artificial Intelligence based tool which uses Audo AI Python Libraries to remove noise from our audio and video files.
+Audo is an Artificial Intelligence based tool that uses Audo AI Python Libraries to remove noise from our audio and video files.
 </br>
 </br>
 <div align='center'>
