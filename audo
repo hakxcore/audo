@@ -1,10 +1,12 @@
 #!/bin/python3
 import sys, getopt
+from os import system
+from termcolor import colored
 from audoai.noise_removal import NoiseRemovalClient
 
 def remNoise(inputfile, outputfile):
     print ('Input file is ', inputfile)
-    noise_removal = NoiseRemovalClient(api_key="<YOUR-API-KEY>")
+    noise_removal = NoiseRemovalClient(api_key="<API_KEY>")
     result = noise_removal.process(inputfile)
     print(result.url)
     result.save(outputfile)
@@ -14,6 +16,12 @@ def remNoise(inputfile, outputfile):
 def main(argv):
    inputfile = ''
    outputfile = ''
+   #banner
+   system('jp2a --colors https://i.ibb.co/t3673SC/audo-logo.png')
+   print(colored('-/hakxcore  v1.0.0'.center(190),'green'))
+   #system("echo '\033[0;37m'")
+   print('_'*110)
+   print('\n\n')
    opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
    for opt, arg in opts:
       if opt == '-h':
