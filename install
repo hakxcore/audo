@@ -1,0 +1,61 @@
+#!/bin/bash
+## Author: Hakxcore https://github.com/hakxcore
+## Colors
+currentVersion="2.1.3"
+
+#colors
+RED="$(printf '\033[31m')" GREEN="$(printf '\033[32m')" ORANGE="$(printf '\033[33m')" BLUE="$(printf '\033[34m')"
+MAGENTA="$(printf '\033[35m')" CYAN="$(printf '\033[36m')" WHITE="$(printf '\033[37m')" BLACK="$(printf '\033[30m')" 
+REDBG="$(printf '\033[41m')" GREENBG="$(printf '\033[42m')" ORANGEBG="$(printf '\033[43m')" BLUEBG="$(printf '\033[44m')", 
+MAGENTABG="$(printf '\033[45m')" CYANBG="$(printf '\033[46m')" WHITEBG="$(printf '\033[47m')" BLACKBG="$(printf '\033[40m')"
+RESETBG="$(printf '\e[0m')" BLINK="$(printf '\033[5;31m')"
+
+##Platform Check
+if [[ "$OSTYPE" == linux-android* ]]; then
+  distro="termux"
+  platform="Termux"
+  prefix="/data/data/com.termux/files/"
+  SUDO=""
+fi
+
+if [ -z "$distro" ]; then
+  distro=$(ls /etc | awk 'match($0, "(.+?)[-_](?:release|version)", groups) {if(groups[1] != "os") {print groups[1]}}')
+  platform="Debian"
+  prefix=""
+  SUDO="sudo"
+fi
+
+if [ -z "$distro" ]; then
+  if [ -f "/etc/os-release" ]; then
+    distro="$(source /etc/os-release && echo $ID)"
+  elif [ "$OSTYPE" == "darwin" ]; then
+    distro="darwin"
+    platform="Darwin"
+    prefix=""
+    SUDO="sudo"
+  else 
+    distro="invalid"
+  fi
+fi
+
+termuxIns()
+{
+    apt install python3
+    apt install python3-pip
+    pip install colored
+    pip install audoai-common
+}
+
+sudoIns()
+{
+    sudo apt install python3
+    sudo apt install python3-pip
+    sudo pip install colored
+    sudo pip install audoai-common
+}
+
+if [ $platform == "Debian" ]; then
+  sudoIns
+  else
+  termuxIns
+fi
