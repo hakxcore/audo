@@ -42,10 +42,8 @@ paste your api by replacing <API_KEY> and save it using `esc:wq`
 
 
 
-### Audo Live Views
 
-<p-align="center">
-  Visits <b>from December 5, 2022</b><br>
+<p align="center">
   <img src="https://profile-counter.glitch.me/audo/count.svg" />
 </p>
 
