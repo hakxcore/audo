@@ -28,13 +28,13 @@ cd audo
 ./install
 vim audo 
 ```
-paste your api by replacing <API_KEY> and save it using `esc:wq`
+paste your api by replacing <API_KEY>
 ```
 ./audo -h
 ```
 
 
-
+Next updates are pending
 
 
 
