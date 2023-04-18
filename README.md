@@ -25,8 +25,7 @@ Audo is an Artificial Intelligence based tool that uses Audo AI Python Libraries
 ```
 git clone https://github.com/hakxcore/audo
 cd audo
-./install
-vim audo 
+./install 
 ```
 paste your api by replacing <API_KEY>
 ```
