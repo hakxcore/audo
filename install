@@ -43,6 +43,8 @@ termuxIns()
     apt install python3
     apt install python3-pip
     pip install colored
+    pip install termcolor
+    pip install audoai.noise_removal
     pip install audoai-common
 }
 
@@ -51,6 +53,8 @@ sudoIns()
     sudo apt install python3
     sudo apt install python3-pip
     sudo pip install colored
+    sudo pip install termcolor
+    sudo pip install audoai.noise_removal
     sudo pip install audoai-common
 }
 
